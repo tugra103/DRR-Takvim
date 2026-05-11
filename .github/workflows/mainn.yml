@@ -18,7 +18,7 @@ jobs:
 
       - name: İnstall React Bootstrap
         run: |
-         npm install -D typescript @types/react @types/node
+         npm install -D tailwindcss postcss autoprefixer
 
 
       - name: Commit and push changes
