@@ -18,7 +18,7 @@ jobs:
 
       - name: İnstall React Bootstrap
         run: |
-         npm install -D @tailwindcss/postcss
+         npm install -D eslint
 
 
       - name: Commit and push changes
