@@ -1,6 +1,13 @@
 {
   "dependencies": {
+    "@fullcalendar/core": "^6.1.20",
+    "@fullcalendar/daygrid": "^6.1.20",
+    "@fullcalendar/interaction": "^6.1.20",
+    "@fullcalendar/list": "^6.1.20",
+    "@fullcalendar/react": "^6.1.20",
+    "@fullcalendar/timegrid": "^6.1.20",
     "bootstrap": "^5.3.8",
+    "quill": "^2.0.3",
     "react-bootstrap": "^2.10.10"
   }
 }
