@@ -1,0 +1,38 @@
+name: Create Next.js App Safely
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-nextjs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+
+      - name: Create Next.js in temp folder
+        run: |
+          echo "Creating temp Next.js app..."
+          npx create-next-app@latest my-app-temp --yes
+          npm install react-bootstrap bootstrap
+
+      - name: Merge temp app into my-app
+        run: |
+          echo "Merging temp app into my-app..."
+          rsync -a -r --ignore-existing my-app-temp/ ./
+          ls .
+          rm -rf my-app-temp
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Add Next.js app via workflow" || echo "No changes to commit"
+          git push
