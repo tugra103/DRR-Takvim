@@ -1,15 +1,11 @@
 // navbar.tsx
 "use client";
-import { useAuth } from '../context/AuthContext';
 import React from "react";
 import { Menubar } from "primereact/menubar";
 import { InputText } from "primereact/inputtext";
-import { Badge } from "primereact/badge";
 import { Avatar } from "primereact/avatar";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import { db } from "@/app/firebase";
 
 const Navbar = () => {
   const { user } = useAuth();
@@ -85,15 +81,6 @@ const Navbar = () => {
       transform: scale(1.06) !important;
     }
   `;
-    useEffect(() => {
-      if (!user) return;
-      getDoc(doc(db, "users", user.uid)).then((snap) => {
-        if (snap.exists()) {
-          const data = snap.data();
-          setPhotoURL(data.photoURL ?? "");
-        }
-      });
-    }, [user]);
   const itemRenderer = (item: any) => (
     <a className="flex align-items-center p-menuitem-link" style={{ gap: "10px" }} href={item.url ?? ""}>
       <span className={item.icon} />
@@ -131,25 +118,11 @@ const Navbar = () => {
     ];
 
   const start = (
-    <img
-      alt="logo"
-      src="/donutsmall.png"//https://primefaces.org/cdn/primereact/images/logo.png"
-      style={{ height: "30px", objectFit: "contain" }}
-    />
+  <p>Günlük Ve Ajanda</p>
   );
 
 
   const end = (
-    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-      <div className="luxury-avatar">
-        <a href="/main/account">
-          <Avatar
-            image={photoURL ?? "https://primefaces.org/cdn/primereact/images/avatar/default.png"}
-            shape="circle"
-          />
-        </a>
-      </div>
-    </div>
   );
 
   return (
