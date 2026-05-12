@@ -18,7 +18,7 @@ jobs:
 
       - name: İnstall React Bootstrap
         run: |
-         npm install -D eslint
+         npm install react-quill-new primereact
 
 
       - name: Commit and push changes
