@@ -8,12 +8,17 @@ import listPlugin from '@fullcalendar/list'
 import trLocale from '@fullcalendar/core/locales/tr'
 import { useEvents } from '@/hooks/useEvents'
 import { CalendarEvent } from '@/types/event'
+import FullCalendar from '@fullcalendar/react';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import ICAL from 'ical.js';
+import { useState, useEffect } from 'react';
 import EventModal from './EventModal'
 import '@/app/calendar-theme.css'
 
 export default function Calendar() {
   const calendarRef = useRef<FullCalendar>(null)
   const { events, addEvent, updateEvent, deleteEvent } = useEvents()
+  
 
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null)
