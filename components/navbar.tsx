@@ -8,9 +8,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const { user } = useAuth();
+
   const router = useRouter()
-  const [photoURL, setPhotoURL] = useState("");
   const lightStyles = `
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap');
 
