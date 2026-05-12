@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import ReactQuill from 'react-quill-new'
+const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 import 'react-quill-new/dist/quill.snow.css'
 
 export default function Page() {
