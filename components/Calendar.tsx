@@ -9,6 +9,7 @@ import trLocale from '@fullcalendar/core/locales/tr'
 import { useEvents } from '@/hooks/useEvents'
 import { CalendarEvent } from '@/types/event'
 import EventModal from './EventModal'
+import '@/app/calendar-theme.css'
 
 export default function Calendar() {
   const calendarRef = useRef<FullCalendar>(null)
