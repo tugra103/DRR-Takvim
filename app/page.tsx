@@ -1,7 +1,7 @@
 "use client"
 
 import dynamic from 'next/dynamic'
-import Navbar from "@/comporents/navbar";
+import Navbar from "@/components/navbar";
 
 // SSR kapalı, FullCalendar client-only
 const Calendar = dynamic(() => import('@/components/Calendar'), {
