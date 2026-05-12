@@ -1,6 +1,7 @@
 "use client"
 
 import dynamic from 'next/dynamic'
+import Navbar from "@/comporents/navbar";
 
 // SSR kapalı, FullCalendar client-only
 const Calendar = dynamic(() => import('@/components/Calendar'), {
@@ -13,5 +14,9 @@ const Calendar = dynamic(() => import('@/components/Calendar'), {
 })
 
 export default function Page() {
-  return (<div className="h-screen p-4 bg-white text-gray-900"><Calendar /></div>)
+  return (<> <Navbar/>
+    <div className="h-screen p-4 bg-white text-gray-900">
+      <Calendar />
+    </div>)
+  </>
 }
