@@ -8,8 +8,6 @@ import listPlugin from '@fullcalendar/list'
 import trLocale from '@fullcalendar/core/locales/tr'
 import { useEvents } from '@/hooks/useEvents'
 import { CalendarEvent } from '@/types/event'
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
 import ICAL from 'ical.js';
 import { useState, useEffect } from 'react';
 import EventModal from './EventModal'
