@@ -13,12 +13,13 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import ICAL from 'ical.js';
 import { useState, useEffect } from 'react';
 import EventModal from './EventModal'
+import { useTurkiyeTatilleri } from '@/hooks/useTurkiyeTatilleri'
 import '@/app/calendar-theme.css'
 
 export default function Calendar() {
   const calendarRef = useRef<FullCalendar>(null)
   const { events, addEvent, updateEvent, deleteEvent } = useEvents()
-  
+  useTurkiyeTatilleri(addEvent) 
 
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null)
