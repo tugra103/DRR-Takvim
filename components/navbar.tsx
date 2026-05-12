@@ -90,11 +90,11 @@ const Navbar = () => {
   );
 
   const items: any[] = [
-    { label: "Ana Sayfa", icon: "pi pi-home", url:"/main" },
-    { label: "Oyunlar", icon: "pi pi-star", url:"/main/games"},
-    { label: "Donut.Exe", icon: "pi pi-star", url:"/main/ai"},
+    { label: "Takvim", icon: "pi pi-home", url:"/" },
+    { label: "Günlük", icon: "pi pi-star", url:"/diary"},
+    /*{ label: "Donut.Exe", icon: "pi pi-star", url:"/main/ai"},
     { label: "Donut Hub", icon:"pi pi-star", url:"https://donuthub.tugra.win"},
-    /*{
+    {
       label: "Projects",
       icon: "pi pi-search",
       items: [
@@ -122,6 +122,7 @@ const Navbar = () => {
 
 
   const end = (
+    <></>
   );
 
   return (
