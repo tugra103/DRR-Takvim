@@ -9,7 +9,6 @@ import trLocale from '@fullcalendar/core/locales/tr'
 import { useEvents } from '@/hooks/useEvents'
 import { CalendarEvent } from '@/types/event'
 import ICAL from 'ical.js';
-import { useState, useEffect } from 'react';
 import EventModal from './EventModal'
 import { useTurkiyeTatilleri } from '@/hooks/useTurkiyeTatilleri'
 import '@/app/calendar-theme.css'
