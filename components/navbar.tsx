@@ -84,7 +84,7 @@ const Navbar = () => {
     <a className="flex align-items-center p-menuitem-link" style={{ gap: "10px" }} href={item.url ?? ""}>
       <span className={item.icon} />
       <span style={{ fontFamily: "Syne, sans-serif" }}>{item.label}</span>
-      {item.badge && <Badge value={item.badge} />}
+      
       {item.shortcut && <span className="shortcut-pill">{item.shortcut}</span>}
     </a>
   );
