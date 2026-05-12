@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import 'react-quill-new/dist/quill.snow.css'
-import Navbar from "../../comporents/navbar";
+import Navbar from "../../components/navbar";
 
 const ReactQuill = dynamic(() => import('react-quill-new'), { ssr: false })
 
