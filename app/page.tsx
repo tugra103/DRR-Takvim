@@ -14,9 +14,11 @@ const Calendar = dynamic(() => import('@/components/Calendar'), {
 })
 
 export default function Page() {
-  return (<> <Navbar/>
+  return (<> 
+    <Navbar/>
     <div className="h-screen p-4 bg-white text-gray-900">
       <Calendar />
-    </div>)
-  </>
+    </div>
+  </>)
+  
 }
