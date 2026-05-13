@@ -5,33 +5,32 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
+import rrulePlugin from '@fullcalendar/rrule'   // ✅ ekle
 import trLocale from '@fullcalendar/core/locales/tr'
 import { useEvents } from '@/hooks/useEvents'
 import { CalendarEvent } from '@/types/event'
-import ICAL from 'ical.js';
 import EventModal from './EventModal'
 import { useTurkiyeTatilleri } from '@/hooks/useTurkiyeTatilleri'
 import '@/app/calendar-theme.css'
+
 interface CalendarProps {
   className?: string
 }
+
 export default function Calendar({ className }: CalendarProps) {
   const calendarRef = useRef<FullCalendar>(null)
   const { events, addEvent, updateEvent, deleteEvent } = useEvents()
-  useTurkiyeTatilleri(addEvent) 
-
+  useTurkiyeTatilleri(addEvent)
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null)
   const [defaultStart, setDefaultStart] = useState<string>('')
 
-  // Güne tıklayınca yeni event
   const handleDateSelect = (info: any) => {
     setSelectedEvent(null)
     setDefaultStart(info.startStr)
     setModalOpen(true)
   }
 
-  // Evente tıklayınca düzenle
   const handleEventClick = (info: any) => {
     const event = events.find(e => e.id === info.event.id)
     if (event) {
@@ -40,7 +39,6 @@ export default function Calendar({ className }: CalendarProps) {
     }
   }
 
-  // Drag & drop
   const handleEventChange = (info: any) => {
     updateEvent({
       ...events.find(e => e.id === info.event.id)!,
@@ -53,7 +51,7 @@ export default function Calendar({ className }: CalendarProps) {
     <div className={`h-screen p-4 ${className ?? ''}`}>
       <FullCalendar
         ref={calendarRef}
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin, rrulePlugin]}  // ✅ ekle
         locale={trLocale}
         initialView={
           typeof window !== 'undefined' && window.innerWidth < 768
@@ -72,8 +70,8 @@ export default function Calendar({ className }: CalendarProps) {
         selectable={true}
         selectMirror={true}
         dayMaxEvents={true}
-        nowIndicator={true}           // kırmızı "şu an" çizgisi
-        scrollTime="08:00:00"         // sabah 8'den başla
+        nowIndicator={true}
+        scrollTime="08:00:00"
         select={handleDateSelect}
         eventClick={handleEventClick}
         eventChange={handleEventChange}
@@ -83,7 +81,6 @@ export default function Calendar({ className }: CalendarProps) {
           hour12: false,
         }}
       />
-
       {modalOpen && (
         <EventModal
           event={selectedEvent}
