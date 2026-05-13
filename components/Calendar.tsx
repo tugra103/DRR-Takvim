@@ -12,8 +12,10 @@ import ICAL from 'ical.js';
 import EventModal from './EventModal'
 import { useTurkiyeTatilleri } from '@/hooks/useTurkiyeTatilleri'
 import '@/app/calendar-theme.css'
-
-export default function Calendar() {
+interface CalendarProps {
+  className?: string
+}
+export default function Calendar({ className }: CalendarProps) {
   const calendarRef = useRef<FullCalendar>(null)
   const { events, addEvent, updateEvent, deleteEvent } = useEvents()
   useTurkiyeTatilleri(addEvent) 
@@ -48,7 +50,7 @@ export default function Calendar() {
   }
 
   return (
-    <div className="h-screen p-4">
+    <div className={`h-screen p-4 ${className ?? ''}`}>
       <FullCalendar
         ref={calendarRef}
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
