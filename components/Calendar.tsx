@@ -55,7 +55,7 @@ export default function Calendar({ className }: CalendarProps) {
         locale={trLocale}
         initialView={
           typeof window !== 'undefined' && window.innerWidth < 768
-            ? 'listWeek'
+            ? 'listMonth'
             : 'timeGridDay'
         }
         headerToolbar={{
