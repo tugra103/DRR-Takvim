@@ -16,6 +16,7 @@ export function useTurkiyeTatilleri(addEvent: (event: CalendarEvent) => void) {
     fetch(`/api/proxy?url=${encodeURIComponent(ICS_URL)}`)
       .then(res => res.text())
       .then(icsData => {
+        alert(icsData);
         const jcal = ICAL.parse(icsData)
         const comp = new ICAL.Component(jcal)
         const vevents = comp.getAllSubcomponents('vevent')
