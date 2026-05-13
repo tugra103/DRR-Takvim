@@ -17,7 +17,7 @@ export default function Page() {
   return (<> 
     <div className="h-screen p-4 bg-white text-gray-900">
       <Navbar/>
-      <Calendar />
+      <Calendar className="bg-white" />
     </div>
   </>)
   
