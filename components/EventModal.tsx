@@ -79,7 +79,7 @@ export default function EventModal({ event, defaultStart, onSave, onDelete, onCl
       const durM = String(diffMin % 60).padStart(2, '0')
 
       base.rrule = {
-        freq: repeat,
+        freq: repeat.toUpperCase(),
         dtstart: start,
         ...(repeat === 'weekly' && repeatDays.length > 0 ? { byweekday: repeatDays } : {}),
         ...(repeatUntil ? { until: repeatUntil } : {}),
