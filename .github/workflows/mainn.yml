@@ -18,7 +18,7 @@ jobs:
 
       - name: İnstall React Bootstrap
         run: |
-         npm install @fullcalendar/react @fullcalendar/daygrid ical.js
+         npm install @fullcalendar/rrule rrule
 
 
       - name: Commit and push changes
