@@ -12,7 +12,8 @@ export function useTurkiyeTatilleri(addEvent: (event: CalendarEvent) => void) {
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY)) return // Zaten yüklendi
 
-    fetch(ICS_URL)
+    // corsproxy.io yerine:
+    fetch(`/api/proxy?url=${encodeURIComponent(ICS_URL)}`)
       .then(res => res.text())
       .then(icsData => {
         const jcal = ICAL.parse(icsData)
