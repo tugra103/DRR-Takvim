@@ -5,6 +5,7 @@
     "@fullcalendar/interaction": "^6.1.20",
     "@fullcalendar/list": "^6.1.20",
     "@fullcalendar/react": "^6.1.20",
+    "@fullcalendar/rrule": "^6.1.20",
     "@fullcalendar/timegrid": "^6.1.20",
     "bootstrap": "^5.3.8",
     "ical.js": "^2.2.1",
@@ -14,7 +15,8 @@
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.0.0",
-    "react-quill-new": "^3.8.3"
+    "react-quill-new": "^3.8.3",
+    "rrule": "^2.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
