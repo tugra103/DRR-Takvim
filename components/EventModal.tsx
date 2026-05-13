@@ -29,7 +29,7 @@ export default function EventModal({ event, defaultStart, onSave, onDelete, onCl
   const [color, setColor] = useState('#3b82f6')
   const [description, setDescription] = useState('')
   const [allDay, setAllDay] = useState(false)
-  const [repeat, setRepeat] = useState<'none' | 'daily' | 'weekly' | 'monthly'>('none')
+  const [repeat, setRepeat] = useState<'none' | 'daily' | 'weekly' | 'monthly' | 'yearly'>('none')
   const [repeatDays, setRepeatDays] = useState<string[]>([])
   const [repeatUntil, setRepeatUntil] = useState('')
 
@@ -158,6 +158,8 @@ export default function EventModal({ event, defaultStart, onSave, onDelete, onCl
                 <option value="daily">Her gün</option>
                 <option value="weekly">Her hafta</option>
                 <option value="monthly">Her ay</option>
+                <option value="yearly">Her Yıl</option>
+                
               </select>
             </div>
 
